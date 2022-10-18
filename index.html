@@ -23,12 +23,12 @@
 
     <style>
       #example_2,
-  		#example_3,
-  		#example_4,
-  		#example_5,
-  		#example_6{
-  			display: none;
-  		}
+      #example_3,
+      #example_4,
+      #example_5,
+      #example_6 {
+        display: none;
+      }
     </style>
     <!--====== Custom css ======-->
     <!-- <link rel="stylesheet" href="assets/css/custom.css"> -->
@@ -679,7 +679,10 @@
         <div class="section-title-center">
           <div class="row gx-xl-5">
             <div class="col-md-10 col-lg-8 mx-auto">
-              <h3>Buttons with different styles</h3>
+              <h3>
+                Buttons with different styles
+                <b><span id="currentDate"></span> </b>
+              </h3>
             </div>
           </div>
         </div>
@@ -695,28 +698,30 @@
             </div>
           </div>
           <div class="d-md-flex justify-content-center gap-4">
-            <div class="vChat__button4 vc-bg-btn mb-3 mb-md-0">
-              <button>
-                <img src="assets/images/user.webp" alt="" />
-                <div>
-                  <p class="info">Robert / Sales Support</p>
-                  <p class="chat">Need Help? Chat via Viber</p>
-                  <p class="online">I'm online</p>
-                  <p class="not-available">I'm not available</p>
-                </div>
-              </button>
-            </div>
-            <div class="vChat__button4 vc-bg-btn vc-btn-offline">
-              <button>
-                <img src="assets/images/user.webp" alt="" />
-                <div>
-                  <p class="info">Robert / Sales Support</p>
-                  <p class="chat">Need Help? Chat via Viber</p>
-                  <p class="online">I'm online</p>
-                  <p class="not-available">I'm not available</p>
-                </div>
-              </button>
-            </div>
+            <button
+              class="vcbp vChat-button-4 vc-btn-bg vc-btn-rounded availability"
+              data-availability='{ "sunday":"00:00-23:59", "monday":"00:00-23:59", "tuesday":"00:00-23:59", "wednesday":"01:00-23:59", "thursday":"00:00-23:59", "friday":"00:00-23:59", "saturday":"00:00-23:59" }'
+            >
+              <img src="assets/images/user.webp" alt="" />
+              <div class="info-wrapper">
+                <p class="info">Robert / Sales Support</p>
+                <p class="title">Need Help? Chat via Viber</p>
+                <p class="online">I'm online</p>
+                <p class="offline">I'm not available</p>
+              </div>
+            </button>
+            <button
+              class="vcbp vChat-button-4 vc-btn-rounded availability"
+              data-availability='{ "sunday":"00:00-08:30", "monday":"00:00-08:30", "tuesday":"00:00-08:30", "wednesday":"01:00-08:30", "thursday":"00:00-08:30", "friday":"00:00-08:30", "saturday":"00:00-08:30" }'
+            >
+              <img src="assets/images/user.webp" alt="" />
+              <div class="info-wrapper">
+                <p class="info">Robert / Sales Support</p>
+                <p class="title">Need Help? Chat via Viber</p>
+                <p class="online">I'm online</p>
+                <p class="offline">I'm not available</p>
+              </div>
+            </button>
           </div>
         </div>
         <!-- Buttons with small border-reduce -->
@@ -731,30 +736,30 @@
             </div>
           </div>
           <div class="d-md-flex justify-content-center gap-4">
-            <div class="vChat__button4 vc-bg-btn vc-small-reduce mb-3 mb-md-0">
-              <button>
-                <img src="assets/images/user.webp" alt="" />
-                <div>
-                  <p class="info">Robert / Sales Support</p>
-                  <p class="chat">Need Help? Chat via Viber</p>
-                  <p class="online">I'm online</p>
-                  <p class="not-available">I'm not available</p>
-                </div>
-              </button>
-            </div>
-            <div
-              class="vChat__button4 vc-bg-btn vc-small-reduce vc-btn-offline"
+            <button
+              class="vcbp vChat-button-4 vc-btn-bg availability"
+              data-availability='{ "sunday":"00:00-23:59", "monday":"00:00-23:59", "tuesday":"00:00-23:59", "wednesday":"01:00-23:59", "thursday":"00:00-23:59", "friday":"00:00-23:59", "saturday":"00:00-23:59" }'
             >
-              <button>
-                <img src="assets/images/user.webp" alt="" />
-                <div>
-                  <p class="info">Robert / Sales Support</p>
-                  <p class="chat">Need Help? Chat via Viber</p>
-                  <p class="online">I'm online</p>
-                  <p class="not-available">I'm not available</p>
-                </div>
-              </button>
-            </div>
+              <img src="assets/images/user.webp" alt="" />
+              <div class="info-wrapper">
+                <p class="info">Robert / Sales Support</p>
+                <p class="title">Need Help? Chat via Viber</p>
+                <p class="online">I'm online</p>
+                <p class="offline">I'm not available</p>
+              </div>
+            </button>
+            <button
+              class="vcbp vChat-button-4 availability"
+              data-availability='{ "sunday":"00:00-08:30", "monday":"00:00-08:30", "tuesday":"00:00-08:30", "wednesday":"01:00-08:30", "thursday":"00:00-08:30", "friday":"00:00-08:30", "saturday":"00:00-08:30" }'
+            >
+              <img src="assets/images/user.webp" alt="" />
+              <div class="info-wrapper">
+                <p class="info">Robert / Sales Support</p>
+                <p class="title">Need Help? Chat via Viber</p>
+                <p class="online">I'm online</p>
+                <p class="offline">I'm not available</p>
+              </div>
+            </button>
           </div>
         </div>
         <!-- Buttons without background -->
@@ -769,17 +774,15 @@
             </div>
           </div>
           <div class="d-md-flex justify-content-center gap-4">
-            <div class="vChat__button4">
-              <button>
-                <img src="assets/images/user.webp" alt="" />
-                <div>
-                  <p class="info">Robert / Sales Support</p>
-                  <p class="chat">Need Help? Chat via Viber</p>
-                  <p class="online">I'm online</p>
-                  <p class="not-available">I'm not available</p>
-                </div>
-              </button>
-            </div>
+            <button class="vcbp vChat-button-4 avatar-active">
+              <img src="assets/images/user.webp" alt="" />
+              <div class="info-wrapper">
+                <p class="info">Robert / Sales Support</p>
+                <p class="title">Need Help? Chat via Viber</p>
+                <p class="online">I'm online</p>
+                <p class="offline">I'm not available</p>
+              </div>
+            </button>
           </div>
         </div>
         <!-- Button with icon -->
@@ -792,18 +795,12 @@
             </div>
           </div>
           <div class="d-md-flex justify-content-center gap-4">
-            <div class="vChat__button3 vc-small-reduce mb-3 mb-md-0">
-              <button>
-                <i class="icofont-brand-viber"></i>
-                <p>How can i help you?</p>
-              </button>
-            </div>
-            <div class="vChat__button3">
-              <button>
-                <i class="icofont-brand-viber"></i>
-                <p>How can i help you?</p>
-              </button>
-            </div>
+            <button class="vcbp vChat-button-3 vc-btn-bg">
+              <i class="icofont-brand-viber"></i>How can i help you?
+            </button>
+            <button class="vcbp vChat-button-3 vc-btn-bg vc-btn-rounded">
+              <i class="icofont-brand-viber"></i>How can i help you?
+            </button>
           </div>
         </div>
         <!-- Button with icon and without background -->
@@ -818,12 +815,9 @@
             </div>
           </div>
           <div class="d-md-flex justify-content-center gap-4">
-            <div class="vChat__button2">
-              <button>
-                <i class="icofont-brand-viber"></i>
-                <p>How can i help you?</p>
-              </button>
-            </div>
+            <button class="vcbp vChat-button-3 vc-btn-rounded">
+              <i class="icofont-brand-viber"></i>How can i help you?
+            </button>
           </div>
         </div>
         <!-- Button with hover effect -->
@@ -840,18 +834,35 @@
           <div
             class="d-md-flex justify-content-center align-items-center gap-4"
           >
-            <div class="vChat__button3 vc-btn-effect mb-3 mb-md-0">
-              <button>
-                <i class="icofont-brand-viber"></i>
-                <p>How can i help you?</p>
-              </button>
+            <button class="vcbp vChat-button-2 vc-btn-rounded vc-btn-effect">
+              <i class="icofont-brand-viber"></i>How can I help?
+            </button>
+            <button class="vcbp vChat-button-2 vc-btn-bg vc-btn-effect">
+              <i class="icofont-brand-viber"></i>How can I help?
+            </button>
+          </div>
+        </div>
+        <!-- Different size buttons -->
+        <div class="mb-5">
+          <div class="row gx-xl-5">
+            <div class="col-md-10 col-lg-6 mx-auto mb-3">
+              <h5 class="mb-2">Sizable Buttons</h5>
+              <p>
+                All buttons comes with three different sizes. Adding one class
+                will make the difference.
+              </p>
             </div>
-            <div class="vChat__button2 vc-btn-effect">
-              <button>
-                <i class="icofont-brand-viber"></i>
-                <p>How can i help you?</p>
-              </button>
-            </div>
+          </div>
+          <div class="d-md-flex justify-content-center align-items-end gap-4">
+            <button class="vcbp vChat-button-3 vc-btn-bg vc-btn-sm">
+              <i class="icofont-brand-viber"></i>How can I help?
+            </button>
+            <button class="vcbp vChat-button-3 vc-btn-bg">
+              <i class="icofont-brand-viber"></i>How can I help?
+            </button>
+            <button class="vcbp vChat-button-3 vc-btn-bg vc-btn-lg">
+              <i class="icofont-brand-viber"></i>How can I help?
+            </button>
           </div>
         </div>
       </div>
@@ -871,18 +882,36 @@
         <div class="row">
           <div class="col-lg-10 col-xl-8 mx-auto">
             <select id="change_effect">
-              <option data-animation="#animation_1" value="1" selected="">Fade Right</option>
+              <option data-animation="#animation_1" value="1" selected="">
+                Fade Right
+              </option>
               <option data-animation="#animation_2" value="2">Fade Down</option>
               <option data-animation="#animation_3" value="3">Ease Down</option>
-              <option data-animation="#animation_4" value="4">Fade In Scale</option>
+              <option data-animation="#animation_4" value="4">
+                Fade In Scale
+              </option>
               <option data-animation="#animation_5" value="5">Rotation</option>
-              <option data-animation="#animation_6" value="6">Slide Fall</option>
-              <option data-animation="#animation_7" value="7">Slide Down</option>
-              <option data-animation="#animation_8" value="8">Rotate Left</option>
-              <option data-animation="#animation_9" value="9">Flip Horizontal</option>
-              <option data-animation="#animation_10" value="10">Flip Vertical</option>
-              <option data-animation="#animation_11" value="11">Slide Up</option>
-              <option data-animation="#animation_12" value="12">Super Scaled</option>
+              <option data-animation="#animation_6" value="6">
+                Slide Fall
+              </option>
+              <option data-animation="#animation_7" value="7">
+                Slide Down
+              </option>
+              <option data-animation="#animation_8" value="8">
+                Rotate Left
+              </option>
+              <option data-animation="#animation_9" value="9">
+                Flip Horizontal
+              </option>
+              <option data-animation="#animation_10" value="10">
+                Flip Vertical
+              </option>
+              <option data-animation="#animation_11" value="11">
+                Slide Up
+              </option>
+              <option data-animation="#animation_12" value="12">
+                Super Scaled
+              </option>
             </select>
           </div>
         </div>
@@ -891,7 +920,7 @@
     <!-- ========== Popup Animation section end ========== -->
 
     <!-- ========== Popup layout section start ========== -->
-    <section class="section-padding bg-one">
+    <section class="section-padding layouts bg-one">
       <div class="container">
         <div class="section-title-center">
           <div class="row gx-xl-5">
@@ -902,61 +931,35 @@
           </div>
         </div>
         <div class="col-lg-10 col-xl-8 mx-auto">
-          <!-- <div class="row">
-            <div class="col-md-6">
-              <div id="popup-header-left" class="">
-                <img
-                  class="img-fluid"
-                  src="assets/images/example_1.png"
-                  alt=""
-                />
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div id="popup-header-center" class="">
-                <img
-                  class="img-fluid"
-                  src="assets/images/example_2.png"
-                  alt=""
-                />
-              </div>
-            </div>
-          </div> -->
           <div class="usage_examples">
             <div class="row">
-              <div class="col-xs-6 usage_example" data-show="#example_1">
-                <img src="assets/images/example_1.png" alt="" />
-                <div class="usage_example_label">Multiple Accounts111000</div>
+              <div class="col-md-6 mb-4 usage_example" data-show="#example_1">
+                <img src="assets/images/header-center.png" alt="" />
+                <div class="layouts__title">Multiple Accounts111000</div>
               </div>
-              <div class="col-xs-6 usage_example" data-show="#example_2">
-                <img src="assets/images/example_2.png" alt="" />
-                <div class="usage_example_label">Multiple Accounts</div>
-              </div>
-            </div>
-
-            <br /><br />
-
-            <div class="row">
-              <div class="col-xs-6 usage_example" data-show="#example_3">
-                <img src="assets/images/example_1.png" alt="" />
-                <div class="usage_example_label">Single Account</div>
-              </div>
-              <div class="col-xs-6 usage_example" data-show="#example_4">
-                <img src="assets/images/example_2.png" alt="" />
-                <div class="usage_example_label">Single Account</div>
+              <div class="col-md-6 mb-4 usage_example" data-show="#example_2">
+                <img src="assets/images/header-left.png" alt="" />
+                <div class="layouts__title">Multiple Accounts</div>
               </div>
             </div>
-
-            <br /><br />
-
             <div class="row">
-              <div class="col-xs-6 usage_example" data-show="#example_5">
+              <div class="col-md-6 mb-4 usage_example" data-show="#example_3">
                 <img src="assets/images/example_1.png" alt="" />
-                <div class="usage_example_label">Button Only</div>
+                <div class="layouts__title">Single Account</div>
               </div>
-              <div class="col-xs-6 usage_example" data-show="#example_6">
+              <div class="col-md-6 mb-4 usage_example" data-show="#example_4">
                 <img src="assets/images/example_2.png" alt="" />
-                <div class="usage_example_label">Button Only</div>
+                <div class="layouts__title">Single Account</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-4 usage_example" data-show="#example_5">
+                <img src="assets/images/example_1.png" alt="" />
+                <div class="layouts__title">Button Only</div>
+              </div>
+              <div class="col-md-6 usage_example" data-show="#example_6">
+                <img src="assets/images/example_2.png" alt="" />
+                <div class="layouts__title">Button Only</div>
               </div>
             </div>
           </div>
@@ -2002,7 +2005,7 @@
     </section>
     <!-- Example1 -->
     <div class="vChat" id="example_1">
-      <div  class="vChat__button"></div>
+      <div class="vChat__button"></div>
       <div class="vChat__popup animation1">
         <div class="vChat__popup--header header-center">
           <div class="image">
@@ -2038,7 +2041,7 @@
 
     <!-- Example2 -->
     <div class="vChat" id="example_2">
-      <div  class="vChat__button"></div>
+      <div class="vChat__button"></div>
       <div class="vChat__popup animation1">
         <div class="vChat__popup--header">
           <div class="image">
@@ -2089,47 +2092,13 @@
     <script src="assets/js/swiper.min.js"></script>
     <!--====== Ajaxchimp js ======-->
     <script src="assets/js/jquery.ajaxchimp.min.js"></script>
+    <!--====== Select toggle button js ======-->
     <script src="assets/js/select-togglebutton.js"></script>
+    <!--====== Moment js ======-->
+    <script src="assets/js/moment.min.js"></script>
+    <!--====== VChat js ======-->
     <script src="assets/js/vChat.js"></script>
     <!--====== Custom js ======-->
     <script src="assets/js/custom.js"></script>
-    <script>
-      // CHANGE EFFECT OF THE POPUP
-      (function () {
-        // USAGE EXAMPLES
-      $('.usage_example').on('click', function(){
-        var $this 	= $(this);
-        var $show 	= $($this.attr('data-show'));
-
-        $('#example_1, #example_2').hide().removeClass('vChat-show');;
-        
-        $show.slideDown(300, function(){
-          setTimeout(function(){
-            if($show.find('.vChat__popup')[0] !== undefined){ // if it has popup
-              $show.find('.vChat__button').trigger('click');
-            }
-          }, 200);
-        });
-
-      });
-
-     // CHANGE EFFECT OF THE POPUP
-        $("#change_effect").on("change", function () {
-          let current = $(this).val();
-          let items = $(".vChat__popup");
-          items.removeClass(function (index, className) {
-            return (className.match(/(^|\s)animation\S+/g) || []).join(" ");
-          });
-          items.each(function () {
-            $(this).addClass("animation" + current);
-            
-          });
-        });
-        $("#change_effect").trigger("change");
-        $(".vChat__button").trigger("click");
-        $("#change_effect").togglebutton();
-      })();
-      
-    </script>
   </body>
 </html>

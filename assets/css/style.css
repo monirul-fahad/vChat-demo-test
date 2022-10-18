@@ -4927,10 +4927,11 @@ img {
   --color-secondary: #623ecf;
   --color-active: #26c281;
   --color-not-available: #f1a528;
-  --color-offline: #afa6a6;
+  --color-offline: #a4a4a4;
   --color-message: #f1f0f0;
   --color-light: #fff;
-  --shadow: 0 4px 20px rgba(0, 0, 0, 0.185);
+  --color-dark: #222;
+  --shadow: 0 7px 15px 1px rgb(55 62 70 / 7%);
   --animate-duration: 1s;
   --animate-delay: 1s;
   --animate-repeat: 1; }
@@ -4940,11 +4941,28 @@ img {
   padding: 0;
   box-sizing: border-box; }
 
+body {
+  font-family: "Poppins", sans-serif;
+  height: 2000px; }
+
 .vChat {
   z-index: 999;
   position: fixed;
   bottom: 25px;
   right: 30px; }
+  @media screen and (max-width: 767px) {
+    .vChat {
+      right: 15px;
+      bottom: 15px; } }
+  .vChat.vChat-left {
+    left: 30px;
+    right: auto; }
+    .vChat.vChat-left .vChat__popup {
+      right: auto; }
+    @media screen and (max-width: 767px) {
+      .vChat.vChat-left {
+        right: 15px;
+        bottom: 15px; } }
   .vChat__button {
     position: relative;
     z-index: 9999;
@@ -4953,7 +4971,8 @@ img {
     border-radius: 50%;
     background-color: var(--color-primary);
     transition: 0.4s ease all;
-    cursor: pointer; }
+    cursor: pointer;
+    border: none; }
     .vChat__button:hover {
       background-color: var(--color-secondary); }
     .vChat__button::before {
@@ -4976,180 +4995,9 @@ img {
       z-index: 2;
       left: 50%;
       top: 50%;
-      transition: 0.4s ease all; }
-    .vChat__button.vc-btn-effect button {
-      transition: all 0.3s; }
-      .vChat__button.vc-btn-effect button:hover {
-        transform: translateY(-10px); }
-  .vChat__button2 button {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 5px 10px 5px 5px;
-    border-radius: 50px;
-    border: 1px solid var(--color-primary);
-    background-color: var(--color-light); }
-    .vChat__button2 button:focus {
-      outline: none; }
-    .vChat__button2 button i {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      padding: 0;
-      border: none;
-      font-size: 25px;
-      background: var(--color-primary);
-      color: var(--color-light);
-      display: flex;
-      align-items: center;
-      justify-content: center; }
-    .vChat__button2 button p {
-      font-size: 16px;
-      font-weight: 600; }
-  .vChat__button2.vc-btn-lg button {
-    padding: 8px 15px 8px 10px; }
-    .vChat__button2.vc-btn-lg button i {
-      width: 55px;
-      height: 55px;
-      font-size: 30px; }
-    .vChat__button2.vc-btn-lg button p {
-      font-size: 17px; }
-  .vChat__button2.vc-btn-sm button i {
-    width: 40px;
-    height: 40px;
-    font-size: 20px; }
-  .vChat__button2.vc-btn-sm button p {
-    font-size: 15px; }
-  .vChat__button2.vc-btn-offline button {
-    background-color: var(--color-offline);
-    border: none;
-    pointer-events: none; }
-  .vChat__button2.vc-btn-effect button {
-    transition: all 0.3s; }
-    .vChat__button2.vc-btn-effect button:hover {
-      transform: translateY(-10px); }
-  .vChat__button3 button {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 15px 20px;
-    border-radius: 50px;
-    border: none;
-    background-color: var(--color-primary); }
-    .vChat__button3 button:focus {
-      outline: none; }
-    .vChat__button3 button i {
-      padding: 0;
-      border: none;
-      font-size: 25px;
-      color: var(--color-light); }
-    .vChat__button3 button p {
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--color-light); }
-  .vChat__button3.vc-btn-lg button i {
-    font-size: 30px; }
-  .vChat__button3.vc-btn-lg button p {
-    font-size: 17px; }
-  .vChat__button3.vc-btn-sm button i {
-    font-size: 20px; }
-  .vChat__button3.vc-btn-sm button p {
-    font-size: 15px; }
-  .vChat__button3.vc-small-reduce button {
-    border-radius: 10px; }
-  .vChat__button3.vc-btn-offline button {
-    background-color: var(--color-offline);
-    border: none;
-    pointer-events: none; }
-  .vChat__button3.vc-btn-effect button {
-    transition: all 0.3s; }
-    .vChat__button3.vc-btn-effect button:hover {
-      transform: translateY(-10px); }
-  .vChat__button4 button {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 7px 18px 7px 10px;
-    border-radius: 50px;
-    border: 1px solid var(--color-primary);
-    text-align: start;
-    background-color: var(--color-light); }
-    .vChat__button4 button:focus {
-      outline: none; }
-    .vChat__button4 button img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      padding: 0;
-      border: 1px solid var(--color-primary); }
-    .vChat__button4 button .info {
-      font-size: 10px;
-      margin-bottom: 5px; }
-    .vChat__button4 button .chat {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 5px; }
-    .vChat__button4 button .online {
-      display: inline-block;
-      padding: 5px;
-      background-color: var(--color-active);
-      color: var(--color-light);
-      font-size: 10px;
-      border-radius: 5px; }
-    .vChat__button4 button .not-available {
-      display: none; }
-  .vChat__button4.vc-btn-lg button {
-    padding: 8px 20px 8px 10px; }
-    .vChat__button4.vc-btn-lg button img {
-      width: 70px;
-      height: 70px; }
-    .vChat__button4.vc-btn-lg button .info {
-      font-size: 13px; }
-    .vChat__button4.vc-btn-lg button .chat {
-      font-size: 17px; }
-    .vChat__button4.vc-btn-lg button .online {
-      font-size: 13px; }
-  .vChat__button4.vc-btn-sm button {
-    padding: 5px 15px 5px 7px; }
-    .vChat__button4.vc-btn-sm button img {
-      width: 55px;
-      height: 55px; }
-    .vChat__button4.vc-btn-sm button .info {
-      font-size: 9px; }
-    .vChat__button4.vc-btn-sm button .chat {
-      font-size: 15px; }
-    .vChat__button4.vc-btn-sm button .online {
-      font-size: 9px; }
-  .vChat__button4.vc-bg-btn button {
-    background-color: var(--color-primary); }
-    .vChat__button4.vc-bg-btn button .info {
-      color: var(--color-light); }
-    .vChat__button4.vc-bg-btn button .chat {
-      color: var(--color-light); }
-    .vChat__button4.vc-bg-btn button .online {
-      color: var(--color-light); }
-  .vChat__button4.vc-small-reduce button {
-    border-radius: 10px; }
-  .vChat__button4.vc-btn-offline button {
-    background-color: var(--color-offline);
-    border: none;
-    pointer-events: none; }
-    .vChat__button4.vc-btn-offline button .online {
-      display: none; }
-    .vChat__button4.vc-btn-offline button .not-available {
-      display: inline-block;
-      padding: 5px;
-      background-color: var(--color-not-available);
-      color: var(--color-light);
-      font-size: 10px;
-      border-radius: 5px; }
-  .vChat__button4.vc-btn-effect button {
-    transition: all 0.3s; }
-    .vChat__button4.vc-btn-effect button:hover {
-      transform: translateY(-10px); }
+      transition: 0.4s ease all;
+      transform: translate(-50%, -50%);
+      transform: scale(0.7); }
   .vChat__send-message {
     padding: 10px 20px;
     border-radius: 20px;
@@ -5179,6 +5027,9 @@ img {
     box-shadow: var(--shadow);
     border-radius: 5px;
     background-color: var(--color-light); }
+    @media screen and (max-width: 767px) {
+      .vChat__popup {
+        width: 290px; } }
     .vChat__popup.animation1 {
       transform: translate(20px); }
     .vChat__popup.animation2 {
@@ -5212,6 +5063,9 @@ img {
       background-color: var(--color-primary);
       border-top-left-radius: 5px;
       border-top-right-radius: 5px; }
+      @media screen and (max-width: 767px) {
+        .vChat__popup--header {
+          padding: 15px; } }
       .vChat__popup--header.header-center {
         flex-direction: column;
         justify-content: center;
@@ -5244,10 +5098,13 @@ img {
         color: var(--color-light); }
       .vChat__popup--header .info__title {
         font-size: 14px;
-        line-height: 1;
+        line-height: 1.5;
         color: var(--color-light); }
     .vChat__popup--content {
       padding: 20px; }
+      @media screen and (max-width: 767px) {
+        .vChat__popup--content {
+          padding: 15px; } }
       .vChat__popup--content .sms {
         display: grid;
         gap: 15px;
@@ -5274,10 +5131,15 @@ img {
             border-right: 15px solid var(--color-message); }
           .vChat__popup--content .sms__text p {
             font-size: 14px; }
-      .vChat__popup--content #current-time {
+      .vChat__popup--content .current-time {
         text-align: center;
         font-size: 14px;
         margin-bottom: 8px; }
+    .vChat__popup.inactive .vChat__popup--header .image::before {
+      background-color: var(--color-not-available); }
+    .vChat__popup.inactive .vChat__send-message {
+      background-color: var(--color-offline);
+      cursor: not-allowed; }
   .vChat.vChat-show .vChat__popup {
     opacity: 1;
     visibility: visible; }
@@ -5339,6 +5201,382 @@ img {
   100% {
     transform: translateZ(0) rotateY(0deg);
     opacity: 1; } }
+
+[class*="vChat-button-"] {
+  padding: 15px 30px;
+  border: none;
+  color: var(--color-dark);
+  border-radius: 5px;
+  font-weight: 600;
+  display: inline-flex;
+  font-size: 16px;
+  gap: 10px;
+  align-items: center;
+  transition: all 0.5s;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid var(--color-primary);
+  background-color: var(--color-light);
+  text-transform: capitalize; }
+  [class*="vChat-button-"] i {
+    font-size: 20px;
+    transition: all 0.5s;
+    margin-left: -5px;
+    color: var(--color-primary); }
+  [class*="vChat-button-"]:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-light); }
+    [class*="vChat-button-"]:hover i {
+      color: var(--color-light); }
+  [class*="vChat-button-"].vc-btn-rounded {
+    border-radius: 30px; }
+  [class*="vChat-button-"].vc-btn-lg {
+    padding: 15px 35px;
+    font-size: 18px; }
+    [class*="vChat-button-"].vc-btn-lg i {
+      font-size: 25px; }
+  [class*="vChat-button-"].vc-btn-sm {
+    padding: 10px 15px; }
+  [class*="vChat-button-"].vc-btn-effect:hover {
+    transform: translateY(-10px); }
+  [class*="vChat-button-"].vc-btn-bg {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    border: none; }
+    [class*="vChat-button-"].vc-btn-bg i {
+      color: var(--color-light); }
+    [class*="vChat-button-"].vc-btn-bg:hover {
+      background-color: var(--color-secondary); }
+  [class*="vChat-button-"].vChat-button-3 {
+    background-color: transparent;
+    color: var(--color-dark);
+    border-radius: 5px;
+    padding: 5px 10px; }
+    [class*="vChat-button-"].vChat-button-3 i {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      padding: 0;
+      border: none;
+      font-size: 20px;
+      background: var(--color-primary);
+      color: var(--color-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.5s; }
+    [class*="vChat-button-"].vChat-button-3:hover {
+      background-color: var(--color-secondary);
+      color: var(--color-light); }
+      [class*="vChat-button-"].vChat-button-3:hover i {
+        background-color: var(--color-light);
+        color: var(--color-primary); }
+    [class*="vChat-button-"].vChat-button-3.vc-btn-lg {
+      padding: 10px 15px;
+      font-size: 18px; }
+      [class*="vChat-button-"].vChat-button-3.vc-btn-lg i {
+        width: 50px;
+        height: 50px; }
+    [class*="vChat-button-"].vChat-button-3.vc-btn-sm {
+      font-size: 14px; }
+      [class*="vChat-button-"].vChat-button-3.vc-btn-sm i {
+        width: 40px;
+        height: 40px; }
+    [class*="vChat-button-"].vChat-button-3.vc-btn-rounded {
+      border-radius: 45px; }
+    [class*="vChat-button-"].vChat-button-3.vc-btn-bg {
+      background-color: var(--color-primary);
+      color: var(--color-light); }
+      [class*="vChat-button-"].vChat-button-3.vc-btn-bg i {
+        background-color: var(--color-light);
+        color: var(--color-primary); }
+      [class*="vChat-button-"].vChat-button-3.vc-btn-bg:hover {
+        background-color: var(--color-secondary); }
+  [class*="vChat-button-"].avatar-active, [class*="vChat-button-"].avatar-inactive {
+    line-height: 1;
+    padding: 7px 18px 7px 10px;
+    border-radius: 5px; }
+    [class*="vChat-button-"].avatar-active img, [class*="vChat-button-"].avatar-inactive img {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      object-fit: cover;
+      padding: 0;
+      border: 1px solid var(--color-light); }
+    [class*="vChat-button-"].avatar-active.vc-btn-lg, [class*="vChat-button-"].avatar-inactive.vc-btn-lg {
+      padding: 10px 13px; }
+      [class*="vChat-button-"].avatar-active.vc-btn-lg .title, [class*="vChat-button-"].avatar-inactive.vc-btn-lg .title {
+        font-size: 17px; }
+      [class*="vChat-button-"].avatar-active.vc-btn-lg img, [class*="vChat-button-"].avatar-inactive.vc-btn-lg img {
+        width: 60px;
+        height: 60px; }
+    [class*="vChat-button-"].avatar-active.vc-btn-sm .title, [class*="vChat-button-"].avatar-inactive.vc-btn-sm .title {
+      font-size: 13px; }
+    [class*="vChat-button-"].avatar-active.vc-btn-sm img, [class*="vChat-button-"].avatar-inactive.vc-btn-sm img {
+      width: 50px;
+      height: 50px; }
+    [class*="vChat-button-"].avatar-active .info-wrapper, [class*="vChat-button-"].avatar-inactive .info-wrapper {
+      text-align: left; }
+    [class*="vChat-button-"].avatar-active .info, [class*="vChat-button-"].avatar-inactive .info {
+      font-size: 10px;
+      margin-bottom: 7px;
+      line-height: 1; }
+    [class*="vChat-button-"].avatar-active .title, [class*="vChat-button-"].avatar-inactive .title {
+      margin-bottom: 7px;
+      font-weight: 700;
+      line-height: 1;
+      font-size: 16px; }
+    [class*="vChat-button-"].avatar-active .online, [class*="vChat-button-"].avatar-inactive .online {
+      display: inline-block;
+      padding: 5px;
+      background-color: var(--color-active);
+      font-size: 10px;
+      border-radius: 5px;
+      line-height: 1; }
+    [class*="vChat-button-"].avatar-active .offline, [class*="vChat-button-"].avatar-inactive .offline {
+      display: inline-block;
+      padding: 5px;
+      background-color: var(--color-active);
+      font-size: 10px;
+      border-radius: 5px;
+      line-height: 1; }
+    [class*="vChat-button-"].avatar-active.vc-btn-rounded, [class*="vChat-button-"].avatar-inactive.vc-btn-rounded {
+      border-radius: 50px; }
+  [class*="vChat-button-"].avatar-active .offline {
+    display: none; }
+  [class*="vChat-button-"].avatar-inactive {
+    background-color: var(--color-offline);
+    color: var(--color-light);
+    cursor: not-allowed;
+    border: none; }
+    [class*="vChat-button-"].avatar-inactive .online {
+      display: none; }
+    [class*="vChat-button-"].avatar-inactive .offline {
+      background-color: var(--color-not-available); }
+
+.vChat-multi {
+  z-index: 999;
+  position: fixed;
+  bottom: 25px;
+  right: 30px; }
+  @media screen and (max-width: 767px) {
+    .vChat-multi {
+      right: 15px;
+      bottom: 15px; } }
+  .vChat-multi.vChat-multi-left {
+    left: 30px;
+    right: auto; }
+    .vChat-multi.vChat-multi-left .vChat-multi__popup {
+      right: auto; }
+    @media screen and (max-width: 767px) {
+      .vChat-multi.vChat-multi-left {
+        right: 15px;
+        bottom: 15px; } }
+  .vChat-multi.vChat-left {
+    left: 30px;
+    right: auto; }
+    .vChat-multi.vChat-left .vChat-multi__popup {
+      right: auto; }
+    @media screen and (max-width: 767px) {
+      .vChat-multi.vChat-left {
+        right: 15px;
+        bottom: 15px; } }
+  .vChat-multi__button {
+    position: relative;
+    z-index: 9999;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    transition: 0.4s ease all;
+    cursor: pointer;
+    border: none; }
+    .vChat-multi__button:hover {
+      background-color: var(--color-secondary); }
+    .vChat-multi__button::before {
+      position: absolute;
+      content: "\e952";
+      font-family: IcoFont;
+      color: var(--color-light);
+      font-size: 25px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: 0.4s ease all; }
+    .vChat-multi__button::after {
+      position: absolute;
+      content: "\eee4";
+      font-family: IcoFont;
+      color: var(--color-light);
+      font-size: 25px;
+      opacity: 0;
+      z-index: 2;
+      left: 50%;
+      top: 50%;
+      transition: 0.4s ease all;
+      transform: translate(-50%, -50%);
+      transform: scale(0.7); }
+  .vChat-multi__popup {
+    position: absolute;
+    width: 300px;
+    bottom: 100%;
+    right: 0;
+    margin-bottom: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    box-shadow: var(--shadow);
+    border-radius: 5px;
+    background-color: var(--color-light); }
+    @media screen and (max-width: 767px) {
+      .vChat-multi__popup {
+        width: 280px; } }
+    .vChat-multi__popup.animation1 {
+      transform: translate(20px); }
+    .vChat-multi__popup.animation2 {
+      transform: translate(0, 50px); }
+    .vChat-multi__popup.animation3 {
+      transform: translateY(100px) scale(0.7); }
+    .vChat-multi__popup.animation4 {
+      transform: scale(0.7); }
+    .vChat-multi__popup.animation5 {
+      transform: scale(0) rotate(720deg); }
+    .vChat-multi__popup.animation6 {
+      transform: translate(30%) translateZ(600px) rotate(10deg); }
+    .vChat-multi__popup.animation7 {
+      transform: translateY(100%) rotateX(90deg); }
+    .vChat-multi__popup.animation8 {
+      transform: translateZ(100px) translateX(-30%) rotateY(90deg); }
+    .vChat-multi__popup.animation9 {
+      transform: rotateY(-70deg); }
+    .vChat-multi__popup.animation10 {
+      transform: rotateX(-70deg); }
+    .vChat-multi__popup.animation11 {
+      transform: rotateX(-60deg);
+      transform-origin: 50% 0; }
+    .vChat-multi__popup.animation12 {
+      transform: scale(2); }
+    .vChat-multi__popup--header {
+      padding: 20px;
+      background-color: var(--color-primary);
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px; }
+      @media screen and (max-width: 767px) {
+        .vChat-multi__popup--header {
+          padding: 15px; } }
+      .vChat-multi__popup--header .title {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 5px;
+        color: var(--color-light); }
+      .vChat-multi__popup--header .subtitle {
+        font-size: 14px;
+        line-height: 1.5;
+        color: var(--color-light); }
+    .vChat-multi__popup--content {
+      padding: 20px; }
+      .vChat-multi__popup--content .user {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        padding: 10px;
+        text-align: left;
+        background-color: var(--color-message);
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.5s;
+        border-left: 2px solid transparent; }
+        .vChat-multi__popup--content .user:not(:last-child) {
+          margin-bottom: 10px; }
+        .vChat-multi__popup--content .user:hover {
+          border-left: 2px solid var(--color-active);
+          opacity: 1; }
+        .vChat-multi__popup--content .user__image img {
+          width: 50px;
+          height: 50px;
+          overflow: hidden;
+          object-fit: cover;
+          border-radius: 50%; }
+        .vChat-multi__popup--content .user__info--name {
+          margin-bottom: 5px;
+          font-weight: 600;
+          line-height: 1;
+          font-size: 14px; }
+        .vChat-multi__popup--content .user__info--title {
+          margin-bottom: 7px;
+          line-height: 1;
+          font-size: 12px; }
+        .vChat-multi__popup--content .user__info--online {
+          display: none;
+          padding: 5px 10px;
+          background-color: var(--color-active);
+          color: var(--color-light);
+          font-size: 10px;
+          border-radius: 15px;
+          line-height: 1; }
+        .vChat-multi__popup--content .user__info--offline {
+          display: none;
+          padding: 5px 10px;
+          background-color: var(--color-not-available);
+          color: var(--color-light);
+          font-size: 10px;
+          border-radius: 15px;
+          line-height: 1;
+          cursor: not-allowed; }
+        .vChat-multi__popup--content .user.avatar-active .user__info--online {
+          display: table; }
+        .vChat-multi__popup--content .user.avatar-inactive {
+          cursor: not-allowed;
+          border-left: 2px solid transparent; }
+          .vChat-multi__popup--content .user.avatar-inactive:hover {
+            border-left: 2px solid var(--color-not-available); }
+          .vChat-multi__popup--content .user.avatar-inactive .user__info--offline {
+            display: table; }
+  .vChat-multi.vChat-show .vChat-multi__popup {
+    opacity: 1;
+    visibility: visible; }
+    .vChat-multi.vChat-show .vChat-multi__popup.animation1 {
+      transform: translateX(0); }
+    .vChat-multi.vChat-show .vChat-multi__popup.animation2 {
+      transform: translate(0, 0); }
+    .vChat-multi.vChat-show .vChat-multi__popup.animation3 {
+      transform: translateY(0) scale(1); }
+    .vChat-multi.vChat-show .vChat-multi__popup.animation4 {
+      transform: scale(1); }
+    .vChat-multi.vChat-show .vChat-multi__popup.animation5 {
+      transform: scale(1) rotate(0deg); }
+    .vChat-multi.vChat-show .vChat-multi__popup.animation6 {
+      transform: translate(0%) translateZ(0) rotate(0deg); }
+    .vChat-multi.vChat-show .vChat-multi__popup.animation7 {
+      transform: translateY(0%) rotateX(0deg); }
+    .vChat-multi.vChat-show .vChat-multi__popup.animation8 {
+      transform: translateZ(0px) translateX(0%) rotateY(0deg); }
+    .vChat-multi.vChat-show .vChat-multi__popup.animation9 {
+      transform: rotateY(0deg); }
+    .vChat-multi.vChat-show .vChat-multi__popup.animation10 {
+      transform: rotateX(0deg); }
+    .vChat-multi.vChat-show .vChat-multi__popup.animation11 {
+      transform: rotateX(0deg); }
+    .vChat-multi.vChat-show .vChat-multi__popup.animation12 {
+      transform: scale(1); }
+  .vChat-multi.vChat-show .vChat-multi__button::before {
+    opacity: 0;
+    transform: scale(0) rotate(360deg);
+    transform: scale(0.7); }
+  .vChat-multi.vChat-show .vChat-multi__button::after {
+    opacity: 1;
+    transform: scale(1) translate(-50%, -50%); }
+
+.layouts img {
+  width: 100%;
+  object-fit: cover; }
+
+.layouts__title {
+  text-align: center;
+  background-color: #7432ff;
+  padding: 20px;
+  color: #ffffff; }
 
 .blog-title {
   text-align: center; }

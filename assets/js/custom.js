@@ -64,18 +64,18 @@
       $navbar.removeClass("navbar_fixed");
     }
   };
-    /******************** 5.Hero5 SLIDER  ********************/
-    PATH.Hero5Slide = function () {
-      new Swiper(".hero5-slide", {
-        loop: true,
-        autoplay: {
-          delay: 5000,
-          disableOnInteraction: false,
-        },
-        effect: "cards",
-        grabCursor: true,
-      });
-    };
+  /******************** 5.Hero5 SLIDER  ********************/
+  PATH.Hero5Slide = function () {
+    new Swiper(".hero5-slide", {
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      effect: "cards",
+      grabCursor: true,
+    });
+  };
   /******************** 5.GLIGHTBOX VIDEO HERO ********************/
   PATH.videoModal = function () {
     GLightbox({
@@ -114,113 +114,6 @@
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
-      },
-    });
-  };
-
-  /******************** 9.TESTIMONIAL SLIDER V2  ********************/
-  PATH.TestimonialSliderV2 = function () {
-    new Swiper(".testimonialSliderv2", {
-      spaceBetween: 18,
-      loop: true,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
-  };
-
-  /******************** 10.PORTFOLIO SLIDER  ********************/
-  PATH.PortfolioSlider = function () {
-    new Swiper(".portfolio4__slider", {
-      slidesPerView: 1,
-      centeredSlides: true,
-      loop: true,
-      spaceBetween: 10,
-      breakpoints: {
-        640: {
-          slidesPerView: 1,
-          spaceBetween: 20,
-        },
-        768: {
-          slidesPerView: 1,
-          spaceBetween: 20,
-        },
-        1024: {
-          slidesPerView: 3,
-          spaceBetween: 100,
-        },
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-        renderBullet: function (index, className) {
-          return '<span class="' + className + '">' + (index + 1) + "</span>";
-        },
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
-  };
-
-  /******************** 11.BLOG SLIDER  ********************/
-  PATH.BlogSlide = function () {
-    new Swiper(".blog-slider", {
-      slidesPerView: 3,
-      spaceBetween: 30,
-      loop: true,
-      autoplay: false,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      breakpoints: {
-        0: {
-          slidesPerView: 1,
-        },
-        768: {
-          slidesPerView: 2,
-        },
-        1024: {
-          slidesPerView: 2,
-        },
-        1170: {
-          slidesPerView: 3,
-        },
-      },
-    });
-  };
-  /******************** 12.SERVICE SLIDER  ********************/
-  PATH.ServiceSlide = function () {
-    new Swiper(".service-slider", {
-      slidesPerView: 2,
-      spaceBetween: 10,
-      loop: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      breakpoints: {
-        0: {
-          slidesPerView: 1,
-        },
-        992: {
-          slidesPerView: 2,
-        },
       },
     });
   };
@@ -363,38 +256,6 @@
       return false;
     });
   };
-  /******************** 17.LOCAL SUBSCRIPTION 2 ********************/
-  PATH.LocalSubs2 = function () {
-    $("#subscribe2").submit(function (e) {
-      e.preventDefault();
-      var email = $("#subscriber-email2").val();
-      var dataString = "email=" + email;
-
-      function isValidEmail(emailAddress) {
-        var pattern = new RegExp(
-          /^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i
-        );
-        return pattern.test(emailAddress);
-      }
-
-      if (isValidEmail(email)) {
-        $.ajax({
-          type: "POST",
-          url: "assets/subscribe/subscribe.php",
-          data: dataString,
-          success: function () {
-            $(".success-msg").fadeIn(1000);
-            $(".error-msg").fadeOut(500);
-            $(".hide-after").fadeOut(500);
-          },
-        });
-      } else {
-        $(".error-msg").fadeIn(1000);
-      }
-
-      return false;
-    });
-  };
 
   /******************** 18.SMOOTH SCROLL ON BUTTON CLICK  ********************/
   $(document).on("click", "a.smooth", function (event) {
@@ -407,36 +268,37 @@
     );
   });
 
-  /******************** 19.SCREENSHOT SLIDER  ********************/
-  PATH.ScreenshotSlider = function () {
-    new Swiper(".screenshot-slider", {
-      slidesPerView: 1,
-      spaceBetween: 20,
-      loop: false,
-      autoplay: false,
-      breakpoints: {
-        576: {
-          slidesPerView: 2,
-        },
-        991: {
-          slidesPerView: 3,
-        },
-        1200: {
-          slidesPerView: 4,
-        },
-        1400: {
-          slidesPerView: 5,
-        },
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
+  PATH.ButtonsLayout = function () {
+    $(".usage_example").on("click", function () {
+      var $this = $(this);
+      var $show = $($this.attr("data-show"));
+
+      $("#example_1, #example_2").hide().removeClass("vChat-show");
+
+      $show.slideDown(300, function () {
+        setTimeout(function () {
+          if ($show.find(".vChat__popup")[0] !== undefined) {
+            // if it has popup
+            $show.find(".vChat__button").trigger("click");
+          }
+        }, 200);
+      });
     });
+
+    // CHANGE EFFECT OF THE POPUP
+    $("#change_effect").on("change", function () {
+      let current = $(this).val();
+      let items = $(".vChat__popup");
+      items.removeClass(function (index, className) {
+        return (className.match(/(^|\s)animation\S+/g) || []).join(" ");
+      });
+      items.each(function () {
+        $(this).addClass("animation" + current);
+      });
+    });
+    $("#change_effect").trigger("change");
+    $(".vChat__button").trigger("click");
+    $("#change_effect").togglebutton();
   };
 
   /******************** DOCUMENT READY FUNCTION ********************/
@@ -448,17 +310,12 @@
     PATH.SoftwarePreview();
     PATH.OdoMeter();
     PATH.TestimonialSlide();
-    PATH.TestimonialSliderV2();
-    PATH.PortfolioSlider();
-    PATH.BlogSlide();
-    PATH.ServiceSlide();
     PATH.OverviewSlide();
     PATH.ContactForm();
     PATH.AjaxChimp();
     PATH.LocalSubs();
-    PATH.LocalSubs2();
     PATH.Hero5Slide();
-    PATH.ScreenshotSlider();
+    PATH.ButtonsLayout();
   });
 
   /******************** WINDOW ON SCROLL FUNCTION ********************/
